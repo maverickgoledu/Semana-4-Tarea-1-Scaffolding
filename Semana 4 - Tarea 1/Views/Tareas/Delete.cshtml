@@ -1,0 +1,42 @@
+﻿@model GestorProyectos.Models.Tarea
+
+@{
+    ViewData["Title"] = "Eliminar Tarea";
+}
+
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h2 class="mb-0">¿Está seguro de eliminar esta tarea?</h2>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i> Esta acción eliminará permanentemente la tarea y todos sus comentarios y archivos asociados.
+        </div>
+
+        <dl class="row">
+            <dt class="col-sm-3">Título:</dt>
+            <dd class="col-sm-9">@Model.Titulo</dd>
+
+            <dt class="col-sm-3">Proyecto:</dt>
+            <dd class="col-sm-9">@Model.Proyecto?.Nombre</dd>
+
+            <dt class="col-sm-3">Descripción:</dt>
+            <dd class="col-sm-9">@Model.Descripcion</dd>
+
+            <dt class="col-sm-3">Estado:</dt>
+            <dd class="col-sm-9">@Model.Estado</dd>
+        </dl>
+
+        <form asp-action="Delete" class="mt-3">
+            <input type="hidden" asp-for="TareaID" />
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Cancelar
+                </a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Confirmar Eliminación
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

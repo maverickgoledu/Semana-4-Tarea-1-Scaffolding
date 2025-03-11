@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido al Gestor de Proyectos</h1>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p class="lead">Usa la navegación para administrar tus proyectos y tareas.</p>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-kanban"></i> Proyectos</h5>
+                        <p class="card-text">Gestiona los proyectos de tu equipo</p>
+                        <a asp-controller="Proyectos" asp-action="Index" class="btn btn-primary">Ver Proyectos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-list-check"></i> Tareas</h5>
+                        <p class="card-text">Administra las tareas de tus proyectos</p>
+                        <a asp-controller="Tareas" asp-action="Index" class="btn btn-primary">Ver Tareas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="lead">Inicia sesión para comenzar a gestionar tus proyectos.</p>
+        <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg mt-3">Iniciar Sesión</a>
+    }
+</div>
