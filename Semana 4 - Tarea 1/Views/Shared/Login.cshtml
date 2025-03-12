@@ -1,4 +1,5 @@
-﻿@model GestorProyectos.Models.Auth.LoginViewModel
+﻿
+@model GestorProyectos.Models.Auth.LoginViewModel
 @{
     ViewData["Title"] = "Iniciar Sesión";
 }
@@ -35,6 +36,19 @@
                     <div class="form-check mb-3">
                         <input asp-for="RememberMe" class="form-check-input" />
                         <label asp-for="RememberMe" class="form-check-label"></label>
+                    </div>
+
+                    <!-- Información de usuarios para login -->
+                    <div class="alert alert-info mb-3">
+                        <h5 class="alert-heading">Credenciales de acceso</h5>
+                        <hr>
+                        <p class="mb-1"><strong>Administrador:</strong></p>
+                        <p class="mb-1">Email: admin@example.com</p>
+                        <p class="mb-1">Contraseña: Admin123*</p>
+                        <hr>
+                        <p class="mb-1"><strong>Usuario Estándar:</strong></p>
+                        <p class="mb-1">Email: usuario@example.com</p>
+                        <p class="mb-0">Contraseña: Usuario123*</p>
                     </div>
 
                     <!-- Botón de Iniciar Sesión -->
